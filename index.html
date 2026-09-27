@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Shopee</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="catalogpage.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h3>Welcome <span id="welcome"></span></h3>
+    <div class="nav-tengah">
+        <input type="text" id="search" placeholder="Cari">
+        <select id="filter">
+        <option value="all">All</option>
+        </select>
+        <select id="urutkan">
+        <option value="sortby">Sort by</option>
+        <option value="lowest-price">Lowest Price</option>
+        <option value="highest-price">Highest Price</option>
+        <option value="highest-rating">Highest Rating</option>
+        <option value="lowest-rating">Lowest Rating</option>
+        </select>
+    </div>
+
+    <div class="nav-kanan">
+        <button id="tombolKeranjang">Keranjang (<span id="jumlahKeranjang">0</span>)</button>
+        <button id="logout">Logout</button>
+    </div>
+    </nav>
+
+    <!-- Katalog Produk -->
+    <h2>Produk</h2>
+    <div class="catalog" id="catalog"></div>
+    <div class="load-more">
+        <button id="more">More</button>
+    </div>
+
+    <!-- Detail Produk -->
+    <div id="popupDetail" hidden>
+        <img id="detailGambar">
+        <h2 id="detailNama"></h2>
+        <p id="detailHarga"></p>
+        <p id="detailStok"></p>
+        <p id="detailBrand"></p>
+        <p id="detailDeskripsi"></p>
+        <button id="tambahKeranjang">Tambah ke Keranjang</button>
+        <button id="tutupDetail">Tutup</button>
+    </div>
+
+    <!-- Keranjang -->
+    <div id="popupKeranjang" hidden>
+        <h2>Keranjang Belanja</h2>
+        <button id="tutupKeranjang">X</button>
+        <div id="daftarKeranjang"></div>
+        <p>Total: $<span id="totalHarga">0.00</span></p>
+        <button id="hapusSemua">Hapus Semua</button>
+    </div>
+</body>
+</html>
