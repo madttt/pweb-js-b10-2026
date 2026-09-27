@@ -2,7 +2,7 @@
 
 const form = document.getElementById('form');
 const submit = document.getElementById('submit');
-const status = document.getElementById('status');
+const statusMsg = document.getElementById('statusMsg');
 
 // mencegah refresh pada halaman ketika submit
 form.addEventListener('submit', async function (event) {
@@ -13,7 +13,7 @@ form.addEventListener('submit', async function (event) {
     const passwordInput = document.getElementById('password');
 
     // loading
-    status.textContent = 'Loading...';
+    statusMsg.textContent = 'Loading...';
     submit.disabled = true;
 
     // error handling
@@ -34,10 +34,9 @@ form.addEventListener('submit', async function (event) {
         });
 
         if (validUser) {
-            localStorage.setItem('username', validUser.username);
-
-            status.textContent =
-                'Login berhasil! Selamat datang, ' + validUser.username;
+            localStorage.setItem('firstName', validUser.firstName);
+            //firstname sesuai dengan instruksi soal.
+            statusMsg.textContent = 'Login berhasil! Selamat datang, ' + validUser.firstName;
 
             // pindah ke halaman katalog
             window.location.href = 'index.html';
@@ -47,7 +46,7 @@ form.addEventListener('submit', async function (event) {
         }
 
     } catch (error) {
-        status.textContent = error.message;
+        statusMsg.textContent = error.message;
 
     } finally {
         submit.disabled = false;
